@@ -16,29 +16,18 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
-
 import com.cg.currypoint.dto.Address;
 import com.cg.currypoint.dto.Item;
 import com.cg.currypoint.dto.Vendor;
-import com.cg.currypoint.exception.VendorNotFoundException;
 import com.cg.currypoint.service.VendorService;
 import com.cg.currypoint.service.VendorServiceImpl;
-import com.cg.currypoint.util.DbUtil;
 
 public class CurryPoint {
 	public static void main(String[] args) {
-		List<Vendor> vendors = new ArrayList<>();
+		List<Vendor> vendors = new ArrayList<Vendor>();
 		Scanner sc = new Scanner(System.in);
 		VendorService service=new VendorServiceImpl();
-//		Random rand = new Random(); 
-//		int randomvalue = rand.nextInt(10000000);
 		int choice;
 		String ch="Y";
 			do {
@@ -64,7 +53,7 @@ public class CurryPoint {
 			String phoneNumber = sc.next();
 			System.out.println("Enter the Email Id : ");
 			String email = sc.next();
-			List<Item> items = new ArrayList<>();
+			List<Item> items = new ArrayList<Item>();
 			do {
 			System.out.println("Enter the Item Name : ");
 			String item_name = sc.next();

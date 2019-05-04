@@ -28,7 +28,7 @@ public class DbUtil {
 	public static EntityManager getConnection() {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("currypointjpa");
 		 em = emf.createEntityManager();
-		 em.getTransaction().begin();
+		 //em.getTransaction().begin();
 		return em;
 	}
 }

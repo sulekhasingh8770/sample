@@ -2,17 +2,13 @@ package com.cg.currypoint.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Address {
 		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
 		@Column(name="addr_id")
-		private int addr_id;
+		private int id;
 		@Column(name="houseNo")
 		private long houseNumber;
 		@Column(name="landmark")
@@ -42,12 +38,12 @@ public class Address {
 			this.pincode = pincode;
 		}
 
-		public int getAddr_id() {
-			return addr_id;
+		public int getId() {
+			return id;
 		}
 
-		public void setAddr_id(int addr_id) {
-			this.addr_id = addr_id;
+		public void setId(int id) {
+			this.id = id;
 		}
 
 		public long getHouseNumber() {
@@ -100,9 +96,9 @@ public class Address {
 
 		@Override
 		public String toString() {
-			return "Address [addr_id=" + addr_id + ", houseNumber=" + houseNumber + ", landmark=" + landmark + ", area="
+			return "Address [addr_id=" + id + ", houseNumber=" + houseNumber + ", landmark=" + landmark + ", area="
 					+ area + ", city=" + city + ", state=" + state + ", pincode=" + pincode + "]";
 		}
 		
-		
+	
 }

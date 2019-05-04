@@ -4,18 +4,13 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-import org.hibernate.annotations.GeneratorType;
 @Entity
 public class Item {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="item_id")
-	private int item_id;
+	private int id;
 	@Column(name="item_name")
 	private String name;
 	@Column(name="item_price")
@@ -32,12 +27,12 @@ public class Item {
 		this.price = price;
 	}
 
-	public int getItem_id() {
-		return item_id;
+	public int getId() {
+		return id;
 	}
 
-	public void setItem_id(int item_id) {
-		this.item_id = item_id;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -58,7 +53,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [id=" + item_id + ", name=" + name + ", price=" + price + "]";
+		return "Item [id=" + id + ", name=" + name + ", price=" + price + "]";
 	}
 	
 
