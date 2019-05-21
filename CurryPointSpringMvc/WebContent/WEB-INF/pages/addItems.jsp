@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-	<%@taglib prefix="c" uri="http://www.springframework.org/tags/form"%>
-<%@taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
-	
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%-- <%@taglib prefix="i" uri="http://www.springframework.org/tags/form"%> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,17 +9,17 @@
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	rel="stylesheet">
-<title>Welcome</title>
+<title>Insert title here</title>
 </head>
-<body style="background-image: url('https://media.istockphoto.com/photos/last-straw-picture-id516329534'); background-repeat: no-repeat">
-	<br />
+<body>
+<br />
 	<div class="row">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-4 col-sm-4 col-md-4"></div>
 
 				<div class="col-xs-12 col-sm-8 col-md-4 ">
-					<h3 class="text-center text-info">Curry Shops</h3>
+					<h3 class="text-center text-info">Add Items</h3>
 					<br />
 					<div class="panel panel-default">
 						<div class="panel-heading">
@@ -30,24 +27,32 @@
 								<small></small>
 							</h3>
 						</div>
-						<div>
-							<a href="add" class="btn btn-primary" type="button">Add
-								Vendor</a>
-						</div>
-						<div class="form-group">
-						<a href="search" class="btn btn-primary" type="submit">Search By City</a>
-						</div>
+						<div class="panel-body">
+			
+							<form action="additem" method="post" >
+								<table>
+								 <tr>
+								<td>Item Id</td>
+								<td><input type="text" name="id" >
+									</tr>  
+										<tr> 
+										<td>Item Name</td>
+										<td><input type="text"  name="name" /></td>
+									</tr>
+									<tr>
+										<td>Item Price</td>
+										<td><input type="text"  name="price" /></td>
+									</tr>
+										
+								</table>
 
-						<div class="form-group">
-						 <a href="searchby"	class="btn btn-primary" type="submit">Search By Vendor Name</a>
+								<input type="submit" class="btn btn-success" />
+							</form>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
 </body>
 </html>

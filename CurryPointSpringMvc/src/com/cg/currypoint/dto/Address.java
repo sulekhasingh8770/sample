@@ -2,10 +2,13 @@ package com.cg.currypoint.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 @Entity
 public class Address {
 	@Id
+	//@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="addr_id")
 	private Integer id;
 	@Column(name="houseNo")

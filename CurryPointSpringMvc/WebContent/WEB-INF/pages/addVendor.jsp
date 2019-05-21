@@ -31,6 +31,11 @@
 						<div class="panel-body">
 							<v:form action="addVendor" method="post" modelAttribute="vend">
 								<table>
+								<tr>
+										<td>Vendor Id</td>
+										<td><v:input path="id" required="true" /></td>
+									</tr>
+									
 									<tr>
 										<td>Vendor Name</td>
 										<td><v:input path="name" required="true" /></td>
@@ -68,15 +73,7 @@
 										<td>Pin Code</td>
 										<td><v:input path="address.pincode" required="true" /></td>
 									</tr>
-									<div class="form-group">
-			<label for="items">Select list:</label>
-				<select path="items.name" items="${cato}">
-					<option>Biryani</option>
-					<option>Chicken</option>
-					<option>Veg</option>
-					<option>Rotis</option>
-				</select>
-			</div>
+			
 								</table>
 
 								<input type="submit" class="btn btn-primary btn-block md-4" />

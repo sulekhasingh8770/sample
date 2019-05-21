@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -13,6 +15,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Vendor {
 	@Id
+	//@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="vendor_id")
 	private Integer id;
 	@Column(name="vendor_name")
@@ -24,6 +27,7 @@ public class Vendor {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="addr_id")
 	private Address address;
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="vendor_id")
 	private List<Item> items;
@@ -31,7 +35,7 @@ public class Vendor {
 	public Vendor() {
 		
 	}
-
+/*
 	public Vendor( String name, String email, BigInteger phoneNumber, Address address, List<Item> items) {
 		super();
 		//this.id = id;
@@ -40,8 +44,16 @@ public class Vendor {
 		this.phoneNumber = phoneNumber;
 		this.address = address;
 		this.items = items;
+	}*/
+	public Vendor(Integer id, String name, String email, BigInteger phoneNumber, Address address, List<Item> items) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.email = email;
+	this.phoneNumber = phoneNumber;
+	this.address = address;
+	this.items = items;
 	}
-
 	public Integer getId() {
 		return id;
 	}

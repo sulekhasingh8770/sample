@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.cg.currypoint.dao.VendorRepository;
 import com.cg.currypoint.dto.Item;
 import com.cg.currypoint.dto.Vendor;
+import com.cg.currypoint.exception.VendorNotFoundException;
 
 @Service
 @Transactional
@@ -21,23 +22,24 @@ public class VendorServiceImpl implements VendorService{
 		static int itemId=200;
 		
 	public Vendor addVendor(Vendor vendor) {
-		vendor.setId(id);
+	
 		vendor.getAddress().setId(addressId);
-		/*for(Item item: vendor.getItems()){
-			item.setId(itemId);
-			itemId++;
-		}
-*/		addressId++;
-		id++;
+		addressId++;
+	
 		return repository.save(vendor);
 	}
 
 	public List<Vendor> searchByLocation(String city) {
+		if(repository.findByLocation(city).isEmpty()){
+			throw new VendorNotFoundException("Vendor Not Found");
+			}
 		return repository.findByLocation(city);
 	}
 
 	public List<Vendor> searchByName(String name) {
-
+		if(repository.findByName(name).isEmpty()){
+			throw new VendorNotFoundException("Vendor Not Found");
+		}
 		return repository.findByName(name);
 	}
 
